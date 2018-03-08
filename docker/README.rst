@@ -1,7 +1,7 @@
 Docker
 ------
 
-This part can be extracted to a new project to manage your own Uptime Server deployment
+This part can be extracted to a new project to manage your own deployment
 with custom Config and secrets management.
 
 Create an image
