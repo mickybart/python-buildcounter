@@ -1,0 +1,285 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>buildcounter package &#8212; Build Counter 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="buildcounter.apis package" href="buildcounter.apis.html" />
+    <link rel="prev" title="Welcome to Build Counter’s documentation!" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="buildcounter.apis.html" title="buildcounter.apis package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Build Counter’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Build Counter 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="buildcounter-package">
+<h1>buildcounter package<a class="headerlink" href="#buildcounter-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-buildcounter.apiv1">
+<span id="buildcounter-apiv1-module"></span><h2>buildcounter.apiv1 module<a class="headerlink" href="#module-buildcounter.apiv1" title="Permalink to this headline">¶</a></h2>
+<p>apiv1 module</p>
+<p>Expose counter API, health check and swagger (json and yaml)</p>
+<dl class="class">
+<dt id="buildcounter.apiv1.SwaggerYaml">
+<em class="property">class </em><code class="descclassname">buildcounter.apiv1.</code><code class="descname">SwaggerYaml</code><span class="sig-paren">(</span><em>api=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apiv1.SwaggerYaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_restplus.resource.Resource</span></code></p>
+<dl class="attribute">
+<dt id="buildcounter.apiv1.SwaggerYaml.endpoint">
+<code class="descname">endpoint</code><em class="property"> = 'swagger.yaml_swagger_yaml'</em><a class="headerlink" href="#buildcounter.apiv1.SwaggerYaml.endpoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="buildcounter.apiv1.SwaggerYaml.get">
+<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apiv1.SwaggerYaml.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>swagger.yaml</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="buildcounter.apiv1.SwaggerYaml.mediatypes">
+<code class="descname">mediatypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apiv1.SwaggerYaml.mediatypes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="buildcounter.apiv1.SwaggerYaml.methods">
+<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#buildcounter.apiv1.SwaggerYaml.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-buildcounter.app">
+<span id="buildcounter-app-module"></span><h2>buildcounter.app module<a class="headerlink" href="#module-buildcounter.app" title="Permalink to this headline">¶</a></h2>
+<p>Application module</p>
+<p>Provide the app Flask object.</p>
+</div>
+<div class="section" id="module-buildcounter.config">
+<span id="buildcounter-config-module"></span><h2>buildcounter.config module<a class="headerlink" href="#module-buildcounter.config" title="Permalink to this headline">¶</a></h2>
+<p>config</p>
+<p>Permit to manage global configurations</p>
+<dl class="class">
+<dt id="buildcounter.config.Config">
+<em class="property">class </em><code class="descclassname">buildcounter.config.</code><code class="descname">Config</code><a class="headerlink" href="#buildcounter.config.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="buildcounter.config.Config.default_env">
+<code class="descname">default_env</code><em class="property"> = 'local'</em><a class="headerlink" href="#buildcounter.config.Config.default_env" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="buildcounter.config.Config.env">
+<code class="descname">env</code><em class="property"> = {'local': {'mongo': {'uri': 'mongodb://localhost:27017', 'db': 'cloud-drone-counter-local', 'timeoutms': 5000}}}</em><a class="headerlink" href="#buildcounter.config.Config.env" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="buildcounter.config.Config.getconfig">
+<code class="descname">getconfig</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.config.Config.getconfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="buildcounter.config.Config.getgeneric">
+<code class="descname">getgeneric</code><span class="sig-paren">(</span><em>section</em>, <em>key</em>, <em>default</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.config.Config.getgeneric" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="buildcounter.config.Config.getmongo">
+<code class="descname">getmongo</code><span class="sig-paren">(</span><em>key=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.config.Config.getmongo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="buildcounter.config.Config.os_env">
+<code class="descname">os_env</code><em class="property"> = 'BRANCH_ENV'</em><a class="headerlink" href="#buildcounter.config.Config.os_env" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-buildcounter.settings">
+<span id="buildcounter-settings-module"></span><h2>buildcounter.settings module<a class="headerlink" href="#module-buildcounter.settings" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-buildcounter.storage">
+<span id="buildcounter-storage-module"></span><h2>buildcounter.storage module<a class="headerlink" href="#module-buildcounter.storage" title="Permalink to this headline">¶</a></h2>
+<p>Storage module</p>
+<p>Permit to store and query build statistics.</p>
+<dl class="class">
+<dt id="buildcounter.storage.Storage">
+<em class="property">class </em><code class="descclassname">buildcounter.storage.</code><code class="descname">Storage</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Storage MongoDB</p>
+<p>Constructor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>config object</em>) – Configuration of mongo and mysql</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="buildcounter.storage.Storage.add_history">
+<code class="descname">add_history</code><span class="sig-paren">(</span><em>owner</em>, <em>name</em>, <em>branch</em>, <em>author_email</em>, <em>build_created</em>, <em>commit</em>, <em>build_number</em>, <em>drone_image</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage.add_history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store into the history the new deployment</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> (<em>string</em>) – project (eg: CLOUD)</li>
+<li><strong>name</strong> (<em>string</em>) – repo (eg: curator)</li>
+<li><strong>branch</strong> (<em>string</em>) – master/develop/release</li>
+<li><strong>author_email</strong> (<em>string</em>) – author email of the commit</li>
+<li><strong>build_created</strong> (<em>int</em>) – date</li>
+<li><strong>commit</strong> (<em>string</em>) – sha of the commit</li>
+<li><strong>build_number</strong> (<em>int</em>) – build number in cicd</li>
+<li><strong>drone_image</strong> (<em>string</em>) – drone used to build the deployment</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">inserted in the history collection (True) or not inserted in the history collection (False)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="buildcounter.storage.Storage.count_all_deployments">
+<code class="descname">count_all_deployments</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage.count_all_deployments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the total number of deployments</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of deployments ([0..INF]) or Error (-1)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="buildcounter.storage.Storage.count_deployments_for">
+<code class="descname">count_deployments_for</code><span class="sig-paren">(</span><em>owner</em>, <em>name</em>, <em>branch</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage.count_deployments_for" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the total number of deployments for the repo and branch</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>owner</strong> (<em>string</em>) – project (eg: CLOUD)</li>
+<li><strong>name</strong> (<em>string</em>) – repo (eg: curator)</li>
+<li><strong>branch</strong> (<em>string</em>) – master/develop/release</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Number of deployments ([0..INF]) or Error (-1)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="buildcounter.storage.Storage.mongo_connect">
+<code class="descname">mongo_connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage.mongo_connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to Mongo</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-buildcounter">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-buildcounter" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Build Counter’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="buildcounter.apis.html"
+                        title="next chapter">buildcounter.apis package</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="buildcounter.apis.html" title="buildcounter.apis package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Build Counter’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Build Counter 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Yellow Pages Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
+    </div>
+  </body>
+</html>
