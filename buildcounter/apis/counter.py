@@ -21,21 +21,21 @@ from flask import request
 from flask_restplus import Namespace, Resource, fields
 import buildcounter.settings as settings
 
-api = Namespace('drone', description='Deployment counter to provide some statistics')
+api = Namespace('', description='Deployment counter to provide some statistics')
 
 model_history = api.model('History', {
     'owner': fields.String(required=True, description='The project', example='CLOUD'),
-    'name': fields.String(required=True, description='The repo name', example='drone-counter'),
+    'name': fields.String(required=True, description='The repo name', example='build-counter'),
     'branch': fields.String(required=True, description='The branch', example='master'),
     'author_email': fields.String(required=True, description='The author email', example='cloud@yp.ca'),
     'build_created': fields.String(required=True, description='The build created date', example='1514562027'),
     'commit': fields.String(required=True, description='The commit', example='1503ea828528d691526e7bd5b36cf30bcf8f3c3f'),
     'build_number': fields.String(required=True, description='The build number', example='10'),
-    'drone_image': fields.String(required=False, description='The drone image', example='drone-ypc:dev'),
+    'build_image': fields.String(required=False, description='The build image', example='build system used'),
 })
 
 @api.route('/history')
-class DroneHistory(Resource):
+class BuildHistory(Resource):
     
     @api.doc('history')
     @api.response(200, 'Deployment successfully added to history.')
@@ -55,10 +55,10 @@ class DroneHistory(Resource):
         build_number = data["build_number"]
 
         # Optional
-        drone_image = data.get("drone_image", None)
+        build_image = data.get("build_image", None)
         
         # Add to history
-        result = settings.storage.add_history(owner, name, branch, author_email, build_created, commit, build_number, drone_image)
+        result = settings.storage.add_history(owner, name, branch, author_email, build_created, commit, build_number, build_image)
         
         if not result:
             api.abort(400, "Failed to add the deployment into history.")
@@ -66,7 +66,7 @@ class DroneHistory(Resource):
         return {"result" : True}, 200
 
 @api.route('/counters/total')
-class DroneCounterTotal(Resource):
+class BuildCounterTotal(Resource):
     
     @api.doc('count_all')
     def get(self):
@@ -83,7 +83,7 @@ class DroneCounterTotal(Resource):
 @api.param('owner', 'The project')
 @api.param('name', 'The repo name')
 @api.param('branch', 'The branch')
-class DroneCounterFor(Resource):
+class BuildCounterFor(Resource):
     
     @api.doc('count_for')
     def get(self, owner, name, branch):

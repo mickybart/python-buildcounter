@@ -25,7 +25,7 @@ from .apis.counter import api as ns1
 
 blueprint = Blueprint('apiv1', __name__)
 api = Api(blueprint,
-    title='drone-counter',
+    title='build-counter',
     version='1.0',
     description='Deployment counter to provide some statistics',
     doc=False

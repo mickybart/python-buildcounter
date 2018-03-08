@@ -78,7 +78,7 @@ class Storage:
         if self.mongo_client is not None:
             self.mongo_client.close()
     
-    def add_history(self, owner, name, branch, author_email, build_created, commit, build_number, drone_image):
+    def add_history(self, owner, name, branch, author_email, build_created, commit, build_number, build_image):
         """Store into the history the new deployment
         
         Args:
@@ -89,7 +89,7 @@ class Storage:
             build_created (int): date
             commit (string): sha of the commit
             build_number (int): build number in cicd
-            drone_image (string): drone used to build the deployment
+            build_image (string): build system used to build the deployment
 
         Returns:
             bool: inserted in the history collection (True) or not inserted in the history collection (False)
@@ -103,7 +103,7 @@ class Storage:
                                               "build_created": int(build_created),
                                               "commit": commit,
                                               "build_number" : int(build_number),
-                                              "drone_image": drone_image})
+                                              "build_image": build_image})
         except:
             return False
         
