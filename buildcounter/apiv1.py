@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""apiv1 module
+
+Expose counter API, health check and swagger (json and yaml)
+"""
+
 from flask import Blueprint
 from flask_restplus import Api
 

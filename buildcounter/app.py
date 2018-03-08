@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""Application module
+
+Provide the app Flask object.
+"""
+
 from flask import Flask
 from .apiv1 import blueprint as api1
 

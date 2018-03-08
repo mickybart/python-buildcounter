@@ -12,17 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""Storage module
+
+Permit to store and query build statistics.
+"""
+
 import pymongo
 
 class Storage:
+    """Storage MongoDB
+    
+    Constructor
+    
+    Args:
+        config (config object): Configuration of mongo and mysql
+    
+    """
     def __init__(self, config):
-        """ Constructor
-        
-        Args:
-            config (config object): Configuration of mongo and mysql
-        
-        """
-        
         self.mongo_client = None
         
         self.config = config
@@ -30,11 +36,9 @@ class Storage:
         self.mongo_connect()
             
     def mongo_connect(self):
-        """ Connect to Mongo
+        """Connect to Mongo"""
         
-        Mongo client will auto-reconnect so there is no needs to call twice this function
-        
-        """
+        # Mongo client will auto-reconnect so there is no needs to call twice this function
         
         # Already connected ?
         if self.mongo_client is not None:
@@ -67,7 +71,7 @@ class Storage:
             self.mongo_client.close()
     
     def add_history(self, owner, name, branch, author_email, build_created, commit, build_number, drone_image):
-        """ store into the history the new deployment
+        """Store into the history the new deployment
         
         Args:
             owner (string): project (eg: CLOUD)
@@ -80,10 +84,7 @@ class Storage:
             drone_image (string): drone used to build the deployment
 
         Returns:
-            bool. The return code::
-            
-                True -- inserted in the history collection
-                False -- not inserted in the history collection
+            bool: inserted in the history collection (True) or not inserted in the history collection (False)
         
         """
         try:
@@ -101,13 +102,10 @@ class Storage:
         return (result is not None)
     
     def count_all_deployments(self):
-        """ get the total number of deployments
+        """Get the total number of deployments
         
         Returns:
-            int. The return code::
-            
-                [0..INF] -- Number of deployments
-                -1 -- Error to get the number of deployments
+            int: Number of deployments ([0..INF]) or Error (-1)
         
         """
         
@@ -119,7 +117,7 @@ class Storage:
         return result
     
     def count_deployments_for(self, owner, name, branch):
-        """ get the total number of deployments for the repo and branch
+        """Get the total number of deployments for the repo and branch
         
         Args:
             owner (string): project (eg: CLOUD)
@@ -127,10 +125,7 @@ class Storage:
             branch (string): master/develop/release
         
         Returns:
-            int. The return code::
-            
-                [0..INF] -- Number of deployments
-                -1 -- Error to get the number of deployments
+            int: Number of deployments ([0..INF]) or Error (-1)
         
         """
         
