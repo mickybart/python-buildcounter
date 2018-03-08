@@ -48,81 +48,81 @@
 <p>Counter</p>
 <p>API for counter statistics</p>
 <dl class="class">
-<dt id="buildcounter.apis.counter.DroneCounterFor">
-<em class="property">class </em><code class="descclassname">buildcounter.apis.counter.</code><code class="descname">DroneCounterFor</code><span class="sig-paren">(</span><em>api=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterFor" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterFor">
+<em class="property">class </em><code class="descclassname">buildcounter.apis.counter.</code><code class="descname">BuildCounterFor</code><span class="sig-paren">(</span><em>api=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterFor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_restplus.resource.Resource</span></code></p>
 <dl class="attribute">
-<dt id="buildcounter.apis.counter.DroneCounterFor.endpoint">
-<code class="descname">endpoint</code><em class="property"> = 'drone_drone_counter_for'</em><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterFor.endpoint" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterFor.endpoint">
+<code class="descname">endpoint</code><em class="property"> = '_build_counter_for'</em><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterFor.endpoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="buildcounter.apis.counter.DroneCounterFor.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>owner</em>, <em>name</em>, <em>branch</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterFor.get" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterFor.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>owner</em>, <em>name</em>, <em>branch</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterFor.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count deployments given its repo and branch</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="buildcounter.apis.counter.DroneCounterFor.mediatypes">
-<code class="descname">mediatypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterFor.mediatypes" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterFor.mediatypes">
+<code class="descname">mediatypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterFor.mediatypes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="buildcounter.apis.counter.DroneCounterFor.methods">
-<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterFor.methods" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterFor.methods">
+<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterFor.methods" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="buildcounter.apis.counter.DroneCounterTotal">
-<em class="property">class </em><code class="descclassname">buildcounter.apis.counter.</code><code class="descname">DroneCounterTotal</code><span class="sig-paren">(</span><em>api=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterTotal" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterTotal">
+<em class="property">class </em><code class="descclassname">buildcounter.apis.counter.</code><code class="descname">BuildCounterTotal</code><span class="sig-paren">(</span><em>api=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterTotal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_restplus.resource.Resource</span></code></p>
 <dl class="attribute">
-<dt id="buildcounter.apis.counter.DroneCounterTotal.endpoint">
-<code class="descname">endpoint</code><em class="property"> = 'drone_drone_counter_total'</em><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterTotal.endpoint" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterTotal.endpoint">
+<code class="descname">endpoint</code><em class="property"> = '_build_counter_total'</em><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterTotal.endpoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="buildcounter.apis.counter.DroneCounterTotal.get">
-<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterTotal.get" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterTotal.get">
+<code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterTotal.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count all deployments</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="buildcounter.apis.counter.DroneCounterTotal.mediatypes">
-<code class="descname">mediatypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterTotal.mediatypes" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterTotal.mediatypes">
+<code class="descname">mediatypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterTotal.mediatypes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="buildcounter.apis.counter.DroneCounterTotal.methods">
-<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#buildcounter.apis.counter.DroneCounterTotal.methods" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildCounterTotal.methods">
+<code class="descname">methods</code><em class="property"> = ['GET']</em><a class="headerlink" href="#buildcounter.apis.counter.BuildCounterTotal.methods" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="buildcounter.apis.counter.DroneHistory">
-<em class="property">class </em><code class="descclassname">buildcounter.apis.counter.</code><code class="descname">DroneHistory</code><span class="sig-paren">(</span><em>api=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.DroneHistory" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildHistory">
+<em class="property">class </em><code class="descclassname">buildcounter.apis.counter.</code><code class="descname">BuildHistory</code><span class="sig-paren">(</span><em>api=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.BuildHistory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_restplus.resource.Resource</span></code></p>
 <dl class="attribute">
-<dt id="buildcounter.apis.counter.DroneHistory.endpoint">
-<code class="descname">endpoint</code><em class="property"> = 'drone_drone_history'</em><a class="headerlink" href="#buildcounter.apis.counter.DroneHistory.endpoint" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildHistory.endpoint">
+<code class="descname">endpoint</code><em class="property"> = '_build_history'</em><a class="headerlink" href="#buildcounter.apis.counter.BuildHistory.endpoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="buildcounter.apis.counter.DroneHistory.mediatypes">
-<code class="descname">mediatypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.DroneHistory.mediatypes" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildHistory.mediatypes">
+<code class="descname">mediatypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.BuildHistory.mediatypes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="buildcounter.apis.counter.DroneHistory.methods">
-<code class="descname">methods</code><em class="property"> = ['POST']</em><a class="headerlink" href="#buildcounter.apis.counter.DroneHistory.methods" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildHistory.methods">
+<code class="descname">methods</code><em class="property"> = ['POST']</em><a class="headerlink" href="#buildcounter.apis.counter.BuildHistory.methods" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="buildcounter.apis.counter.DroneHistory.post">
-<code class="descname">post</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.DroneHistory.post" title="Permalink to this definition">¶</a></dt>
+<dt id="buildcounter.apis.counter.BuildHistory.post">
+<code class="descname">post</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.apis.counter.BuildHistory.post" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store the new deployment in history</p>
 </dd></dl>
 

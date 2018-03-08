@@ -201,7 +201,7 @@ that need it. Specially those for flask-restplus</p>
 </table>
 <dl class="method">
 <dt id="buildcounter.storage.Storage.add_history">
-<code class="descname">add_history</code><span class="sig-paren">(</span><em>owner</em>, <em>name</em>, <em>branch</em>, <em>author_email</em>, <em>build_created</em>, <em>commit</em>, <em>build_number</em>, <em>drone_image</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage.add_history" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_history</code><span class="sig-paren">(</span><em>owner</em>, <em>name</em>, <em>branch</em>, <em>author_email</em>, <em>build_created</em>, <em>commit</em>, <em>build_number</em>, <em>build_image</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage.add_history" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store into the history the new deployment</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -215,7 +215,7 @@ that need it. Specially those for flask-restplus</p>
 <li><strong>build_created</strong> (<em>int</em>) – date</li>
 <li><strong>commit</strong> (<em>string</em>) – sha of the commit</li>
 <li><strong>build_number</strong> (<em>int</em>) – build number in cicd</li>
-<li><strong>drone_image</strong> (<em>string</em>) – drone used to build the deployment</li>
+<li><strong>build_image</strong> (<em>string</em>) – build system used to build the deployment</li>
 </ul>
 </td>
 </tr>
