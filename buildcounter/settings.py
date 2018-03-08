@@ -12,8 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .config import Config
+"""Settings module
+
+This is a special module that permit to share some common variables between all other modules
+that need it. Specially those for flask-restplus
+"""
+
 from .storage import Storage
 
-config = Config()
-storage = Storage(config)
+config = None
+storage = None
+
+def init(_config):
+    """Settings Init
+    
+    Args:
+        _config (Config): Configuration ot the build counter
+    """
+    global config
+    global storage
+    config = _config
+    storage = Storage(config.mongo["uri"],
+                      config.mongo["timeoutms"],
+                      config.mongo["db"],
+                      config.mongo["collection"])

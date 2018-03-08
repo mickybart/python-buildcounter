@@ -1,3 +1,18 @@
-from buildcounter.app import app
+from buildcounter.config import Config
+from buildcounter.app import App
 
-app.run(host='0.0.0.0')
+# secret.json file example :
+#
+# {
+#     "mongo" : {
+#         "uri": "",
+#         "db": "",
+#         "timeoutms": 5000,
+#         "collection" : ""
+#     }
+# }
+#
+secrets = Config.load_json("secret.json")
+config = Config(secrets["mongo"])
+
+App(config).run()

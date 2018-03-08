@@ -13,44 +13,38 @@
 # limitations under the License.
 
 """
-config
+config module
 
 Permit to manage global configurations
 """
 
-import os
+import json
 
 class Config:
-    default_env = "local"
-    os_env = "BRANCH_ENV"
+    """Configuration for buildcounter and sub-modules
     
-    env = {
-        "local" : {
-            "mongo" : {
-                "uri": "mongodb://localhost:27017",
-                "db": "cloud-drone-counter-local",
-                "timeoutms": 5000
-                }
-            }
-        }
-    
-    def __init__(self):
-        config_env = os.environ.get(self.os_env, self.default_env)
-        print("Config: environment: %s" % config_env)
-        if config_env not in self.env.keys():
-            raise Exception("Environment %s=%s not set in config.py" % (self.os_env, config_env))
+    This class can be overriden and so adapted by every compagnies.
         
-        self.active_env = config_env
+    Constructor
     
-    def getconfig(self):
-        return self.env[self.active_env]
+    Args:
+        mongo_credentials (dict): Mongo credentials eg: {"uri": "", "db": "", "timeoutms": 5000, "collection": ""}
+    """
     
-    def getgeneric(self, section, key, default):
-        if key is not None:
-            return self.getconfig()[section].get(key, default)
+    def __init__(self, mongo_credentials):
+        self.mongo = mongo_credentials
         
-        return self.getconfig()[section]
-    
-    def getmongo(self, key=None, default=None):
-        return self.getgeneric("mongo", key, default)
-
+    def load_json(json_file):
+        """Load JSON file
+        
+        Args:
+            json_file (str): filename of a json file
+            
+        Returns:
+            dict: content of the file
+        """
+        try:
+            with open(json_file) as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return None

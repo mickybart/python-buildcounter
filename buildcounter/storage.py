@@ -25,18 +25,26 @@ class Storage:
     Constructor
     
     Args:
-        config (config object): Configuration of mongo and mysql
+        uri (str): MongoDB connection string
+        timeoutms (int): MongoDB requests timeout in ms
+        db (str): The DB name
+        collection (str): The collection name
     
     """
-    def __init__(self, config):
+    def __init__(self, uri, timeoutms, db, collection):
         self.mongo_client = None
-        
-        self.config = config
 
-        self.mongo_connect()
+        self.mongo_connect(uri, timeoutms, db, collection)
             
-    def mongo_connect(self):
-        """Connect to Mongo"""
+    def mongo_connect(self, uri, timeoutms, db, collection):
+        """Connect to Mongo
+        
+        Args:
+            uri (str): MongoDB connection string
+            timeoutms (int): MongoDB requests timeout in ms
+            db (str): The DB name
+            collection (str): The collection name
+        """
         
         # Mongo client will auto-reconnect so there is no needs to call twice this function
         
@@ -48,14 +56,14 @@ class Storage:
         try:
             print("connection to mongo...")
             # Init Mongo and create DB and collections objects
-            self.mongo_client = pymongo.MongoClient(self.config.getmongo("uri"), serverSelectionTimeoutMS=self.config.getmongo("timeoutms"))
-            self.db = self.mongo_client[self.config.getmongo("db")]
-            self.history = self.db.get_collection("history")
+            self.mongo_client = pymongo.MongoClient(uri, timeoutms)
+            self.db = self.mongo_client[db]
+            self.history = self.db.get_collection(collection)
             
             if len(self.history.index_information()) == 0:
                 # collection does not exist
                 # create it and create indexes
-                self.db.create_collection("history")
+                self.db.create_collection(collection)
                 self.history.create_index( [("branch", pymongo.HASHED)] )
                 self.history.create_index( [("owner", pymongo.HASHED)] )
                 self.history.create_index( [("name", pymongo.HASHED)] )

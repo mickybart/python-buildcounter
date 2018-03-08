@@ -19,8 +19,28 @@ Provide the app Flask object.
 
 from flask import Flask
 from .apiv1 import blueprint as api1
+import buildcounter.settings as settings
 
-app = Flask(__name__)
-app.register_blueprint(api1)
-
-# app.run(host='0.0.0.0')
+class App:
+    """Core of the application
+    
+    Constructor
+    
+    Args:
+        config (Config): configuration of the application
+    """
+    
+    def __init__(self, config):
+        # init the settings module
+        settings.init(config)
+        
+        self.app = Flask(__name__)
+        self.app.register_blueprint(api1)
+    
+    def run(self, host='0.0.0.0'):
+        """Start the application
+        
+        Keyword Arguments:
+            host (string): IP to bind
+        """
+        self.app.run(host=host)
