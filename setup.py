@@ -12,7 +12,7 @@ setup(
     author="Yellow Pages Inc.",
     author_email="cloud@yp.ca",
     license="Apache License 2.0",
-    description="build counters for statistics purpose",
+    description="build counters for statistics purpose (DevOps)",
     long_description=open('README.rst').read(),
     url="https://github.com/mickybart/python-buildcounter",
     keywords=["count", "counter"],

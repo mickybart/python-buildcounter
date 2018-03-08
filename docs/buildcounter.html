@@ -83,50 +83,97 @@
 <span id="buildcounter-app-module"></span><h2>buildcounter.app module<a class="headerlink" href="#module-buildcounter.app" title="Permalink to this headline">¶</a></h2>
 <p>Application module</p>
 <p>Provide the app Flask object.</p>
+<dl class="class">
+<dt id="buildcounter.app.App">
+<em class="property">class </em><code class="descclassname">buildcounter.app.</code><code class="descname">App</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.app.App" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Core of the application</p>
+<p>Constructor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<a class="reference internal" href="#buildcounter.config.Config" title="buildcounter.config.Config"><em>Config</em></a>) – configuration of the application</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="buildcounter.app.App.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>host='0.0.0.0'</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.app.App.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the application</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Keyword Arguments:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><strong>host</strong> (<em>string</em>) – IP to bind</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-buildcounter.config">
 <span id="buildcounter-config-module"></span><h2>buildcounter.config module<a class="headerlink" href="#module-buildcounter.config" title="Permalink to this headline">¶</a></h2>
-<p>config</p>
+<p>config module</p>
 <p>Permit to manage global configurations</p>
 <dl class="class">
 <dt id="buildcounter.config.Config">
-<em class="property">class </em><code class="descclassname">buildcounter.config.</code><code class="descname">Config</code><a class="headerlink" href="#buildcounter.config.Config" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">buildcounter.config.</code><code class="descname">Config</code><span class="sig-paren">(</span><em>mongo_credentials</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.config.Config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="attribute">
-<dt id="buildcounter.config.Config.default_env">
-<code class="descname">default_env</code><em class="property"> = 'local'</em><a class="headerlink" href="#buildcounter.config.Config.default_env" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="buildcounter.config.Config.env">
-<code class="descname">env</code><em class="property"> = {'local': {'mongo': {'uri': 'mongodb://localhost:27017', 'db': 'cloud-drone-counter-local', 'timeoutms': 5000}}}</em><a class="headerlink" href="#buildcounter.config.Config.env" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<p>Configuration for buildcounter and sub-modules</p>
+<p>This class can be overriden and so adapted by every compagnies.</p>
+<p>Constructor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mongo_credentials</strong> (<em>dict</em>) – Mongo credentials eg: {“uri”: “”, “db”: “”, “timeoutms”: 5000, “collection”: “”}</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
-<dt id="buildcounter.config.Config.getconfig">
-<code class="descname">getconfig</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.config.Config.getconfig" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="buildcounter.config.Config.getgeneric">
-<code class="descname">getgeneric</code><span class="sig-paren">(</span><em>section</em>, <em>key</em>, <em>default</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.config.Config.getgeneric" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="buildcounter.config.Config.getmongo">
-<code class="descname">getmongo</code><span class="sig-paren">(</span><em>key=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.config.Config.getmongo" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="buildcounter.config.Config.os_env">
-<code class="descname">os_env</code><em class="property"> = 'BRANCH_ENV'</em><a class="headerlink" href="#buildcounter.config.Config.os_env" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="buildcounter.config.Config.load_json">
+<code class="descname">load_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.config.Config.load_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load JSON file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>json_file</strong> (<em>str</em>) – filename of a json file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">content of the file</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 
 </div>
 <div class="section" id="module-buildcounter.settings">
 <span id="buildcounter-settings-module"></span><h2>buildcounter.settings module<a class="headerlink" href="#module-buildcounter.settings" title="Permalink to this headline">¶</a></h2>
+<p>Settings module</p>
+<p>This is a special module that permit to share some common variables between all other modules
+that need it. Specially those for flask-restplus</p>
+<dl class="function">
+<dt id="buildcounter.settings.init">
+<code class="descclassname">buildcounter.settings.</code><code class="descname">init</code><span class="sig-paren">(</span><em>_config</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.settings.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Settings Init</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>_config</strong> (<a class="reference internal" href="#buildcounter.config.Config" title="buildcounter.config.Config"><em>Config</em></a>) – Configuration ot the build counter</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 <div class="section" id="module-buildcounter.storage">
 <span id="buildcounter-storage-module"></span><h2>buildcounter.storage module<a class="headerlink" href="#module-buildcounter.storage" title="Permalink to this headline">¶</a></h2>
@@ -134,7 +181,7 @@
 <p>Permit to store and query build statistics.</p>
 <dl class="class">
 <dt id="buildcounter.storage.Storage">
-<em class="property">class </em><code class="descclassname">buildcounter.storage.</code><code class="descname">Storage</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">buildcounter.storage.</code><code class="descname">Storage</code><span class="sig-paren">(</span><em>uri</em>, <em>timeoutms</em>, <em>db</em>, <em>collection</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Storage MongoDB</p>
 <p>Constructor</p>
@@ -142,7 +189,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>config object</em>) – Configuration of mongo and mysql</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uri</strong> (<em>str</em>) – MongoDB connection string</li>
+<li><strong>timeoutms</strong> (<em>int</em>) – MongoDB requests timeout in ms</li>
+<li><strong>db</strong> (<em>str</em>) – The DB name</li>
+<li><strong>collection</strong> (<em>str</em>) – The collection name</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -219,8 +272,22 @@
 
 <dl class="method">
 <dt id="buildcounter.storage.Storage.mongo_connect">
-<code class="descname">mongo_connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage.mongo_connect" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mongo_connect</code><span class="sig-paren">(</span><em>uri</em>, <em>timeoutms</em>, <em>db</em>, <em>collection</em><span class="sig-paren">)</span><a class="headerlink" href="#buildcounter.storage.Storage.mongo_connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect to Mongo</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uri</strong> (<em>str</em>) – MongoDB connection string</li>
+<li><strong>timeoutms</strong> (<em>int</em>) – MongoDB requests timeout in ms</li>
+<li><strong>db</strong> (<em>str</em>) – The DB name</li>
+<li><strong>collection</strong> (<em>str</em>) – The collection name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
