@@ -10,7 +10,7 @@ Docker
 
 The docker folder provides everything to create an image of a Build Counter service.
 
-buidlcounter module
+buildcounter module
 -------------------
 
 Installation
