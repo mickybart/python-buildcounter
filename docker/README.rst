@@ -10,8 +10,7 @@ Create an image
 .. code:: bash
     
     export VERSION=1
-    export UPTIME_ENV=dev
-    docker build -t buildcounter:$VERSION --build-arg UPTIME_ENV=$UPTIME_ENV .
+    docker build -t buildcounter:$VERSION .
 
 secret.json
 ^^^^^^^^^^^

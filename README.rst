@@ -74,7 +74,7 @@ Please read the Code documentation for more details.
     class CustomConfig(Config):
         pass
 
-    config = CustomConfig(ecrets["mongo"])
+    config = CustomConfig(secrets["mongo"])
     
     App(config).run()
 
